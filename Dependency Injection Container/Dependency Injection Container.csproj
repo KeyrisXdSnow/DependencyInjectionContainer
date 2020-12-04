@@ -38,6 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ClassCreator.cs" />
         <Compile Include="DependenciesConfiguration.cs" />
         <Compile Include="Dependency.cs" />
         <Compile Include="DependencyProvider.cs" />
