@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{34DB0490-61F9-408A-982B-889C0F7157B0}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <ProjectGuid>{37445894-365E-42F4-A797-0779C51F4737}</ProjectGuid>
+        <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Dependency_Injection_Container</RootNamespace>
-        <AssemblyName>Dependency_Injection_Container</AssemblyName>
+        <RootNamespace>DependencyInjectionContainerLib</RootNamespace>
+        <AssemblyName>DependencyInjectionContainerLib</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -38,6 +38,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="attribute\DependencyKeyAttribute.cs" />
+        <Compile Include="ClassCreator.cs" />
+        <Compile Include="DependenciesConfiguration.cs" />
+        <Compile Include="Dependency.cs" />
+        <Compile Include="DependencyProvider.cs" />
+        <Compile Include="exceptions\ValidationException.cs" />
+        <Compile Include="Key.cs" />
+        <Compile Include="LifeCycle.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

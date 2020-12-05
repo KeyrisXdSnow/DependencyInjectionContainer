@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Dependency_Injection_Container;
 using Dependency_Injection_Container.exceptions;
 
-namespace Dependency_Injection_Container
+namespace DependencyInjectionContainerLib
 {
     public class DependencyProvider
     {

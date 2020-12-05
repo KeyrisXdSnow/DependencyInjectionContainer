@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dependency_Injection_Container;
 
-namespace Dependency_Injection_Container
+namespace DependencyInjectionContainerLib
 {
     public class DependenciesConfiguration
     {

@@ -1,4 +1,6 @@
-﻿namespace Dependency_Injection_Container
+﻿using DependencyInjectionContainerLib;
+
+namespace Dependency_Injection_Container
 {
     
     [System.AttributeUsage(System.AttributeTargets.Parameter)]  

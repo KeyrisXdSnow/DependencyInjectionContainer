@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Dependency_Injection_Container;
 
-namespace Dependency_Injection_Container
+namespace DependencyInjectionContainerLib
 {
     public static class ClassCreator
     {

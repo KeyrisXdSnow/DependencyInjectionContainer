@@ -1,4 +1,4 @@
-﻿namespace Dependency_Injection_Container
+﻿namespace DependencyInjectionContainerLib
 {
     public enum Key
     {

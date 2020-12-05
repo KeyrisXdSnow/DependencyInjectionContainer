@@ -1,6 +1,7 @@
 ﻿using System;
+using Dependency_Injection_Container;
 
-namespace Dependency_Injection_Container
+namespace DependencyInjectionContainerLib
 {
     public class Dependency
     {

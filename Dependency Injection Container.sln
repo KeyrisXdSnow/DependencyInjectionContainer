@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependency Injection Container", "Dependency Injection Container\Dependency Injection Container.csproj", "{34DB0490-61F9-408A-982B-889C0F7157B0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{8155F2B8-F3A0-472C-8B74-C4118F50BD5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionContainerLib", "DependencyInjectionContainerLib\DependencyInjectionContainerLib.csproj", "{37445894-365E-42F4-A797-0779C51F4737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34DB0490-61F9-408A-982B-889C0F7157B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34DB0490-61F9-408A-982B-889C0F7157B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34DB0490-61F9-408A-982B-889C0F7157B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34DB0490-61F9-408A-982B-889C0F7157B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8155F2B8-F3A0-472C-8B74-C4118F50BD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8155F2B8-F3A0-472C-8B74-C4118F50BD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8155F2B8-F3A0-472C-8B74-C4118F50BD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8155F2B8-F3A0-472C-8B74-C4118F50BD5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37445894-365E-42F4-A797-0779C51F4737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37445894-365E-42F4-A797-0779C51F4737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37445894-365E-42F4-A797-0779C51F4737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37445894-365E-42F4-A797-0779C51F4737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
