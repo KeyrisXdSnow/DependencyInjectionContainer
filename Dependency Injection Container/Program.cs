@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Dependency_Injection_Container
@@ -8,67 +9,53 @@ namespace Dependency_Injection_Container
         public static void Main(string[] args)
         {
             var config = new DependenciesConfiguration();
-            
-            //config.Register<IService,ServiceImpl>();
-            config.Register<IService,ServiceRmpl>(LifeCycle.Singleton);
-            config.Register<IRepository,RepositoryImpl>();
-            config.Register<IClass,ClassImpl>();
-            
-            
-            DependencyProvider provider = new DependencyProvider(config);
-            //var serviceImpl = provider.Resolve<IService>();
 
-            var s1 = provider.Resolve<IService>();
-            var s2 = provider.Resolve<IService>();
+            config.Register<IRepository, MySqlRepository1>();
+            config.Register<IService<IRepository>, ServiceImpl<IRepository>>();
+          //  config.Register(typeof(IService<>), typeof(ServiceImpl<>));
 
-            bool flag = s1.Equals(s2);
+            var provider = new DependencyProvider(config);
+            var kra = provider.Resolve<IService<IRepository>>();
+
+
             
             Console.WriteLine("All OK");
         }
         
-        
-        interface IService {}
-        class ServiceImpl : IService
+        interface IService<TRepository> where TRepository : IRepository
+        {
+        }
+
+        class ServiceImpl<TRepository> : IService<TRepository> 
+            where TRepository : IRepository
         {
             private IRepository Repository;
-            private int IntValue;
-            private string StringValue;
-            
-            public ServiceImpl(IRepository repository, int intValue, string stringValue) // ServiceImpl зависит от IRepository
+            public ServiceImpl(TRepository repository)
             {
                 Repository = repository;
-                IntValue = intValue;
-                StringValue = stringValue;
-
             }
-        }
-        
-        class ServiceRmpl : IService
-        {
-            private int y = 10;
-            public ServiceRmpl(IRepository repository) // ServiceImpl зависит от IRepository
-            {
-                
-            }
-        }
-        interface IRepository{}
-        class RepositoryImpl : IRepository
-        {
-            public string Rep = "repositoryImpl";
-            private IClass _class;
-
-            public RepositoryImpl(IClass @class)
-            {
-                _class = @class;
-            } // может иметь свои зависимости, опустим для простоты
-        }
-        
-        interface IClass{}
-        class ClassImpl : IClass
-        {
-            public string cl = "classImpl";
             
-            public ClassImpl(){} // может иметь свои зависимости, опустим для простоты
+        }
+        
+        interface IRepository{}
+
+        class MySqlRepository : IRepository
+        {
+            private int gg;
+            public MySqlRepository(int g)
+            {
+                gg = g;
+            }
+            
+        }
+        
+        class MySqlRepository1 : IRepository
+        {
+            private int mm = 100;
+            public MySqlRepository1()
+            {
+            }
+            
         }
 
     }

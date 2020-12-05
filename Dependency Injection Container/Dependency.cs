@@ -9,6 +9,7 @@ namespace Dependency_Injection_Container
 
         // singleton object
         private object _instance;
+        private static readonly object Locker = new object();
 
         public Dependency(Type type, LifeCycle lifeCycle)
         {
@@ -16,11 +17,12 @@ namespace Dependency_Injection_Container
             LifeCycle = lifeCycle;
         }
 
-        public object GetInstance( object @object)
+        public object GetInstance(object @object)
         {
-            if (_instance == null)
-                _instance = @object;
-            return _instance;
+            lock (Locker)
+            {
+                return _instance ?? (_instance = @object);
+            }
         }
     }
 }
