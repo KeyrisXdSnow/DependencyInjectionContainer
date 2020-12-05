@@ -17,31 +17,43 @@ namespace Dependency_Injection_Container
             where TImplementation : class, TInterface
 
         {
-            Register(typeof(TInterface),typeof(TImplementation),lifeCycle);
+            Register(typeof(TInterface), typeof(TImplementation), lifeCycle, Key.None);
+        }
+
+        public void Register<TInterface, TImplementation>(LifeCycle lifeCycle, Key key)
+            where TInterface : class
+            where TImplementation : class, TInterface
+        {
+            Register(typeof(TInterface), typeof(TImplementation), lifeCycle, key);
+        }
+        public void Register<TInterface, TImplementation>(Key key)
+            where TInterface : class
+            where TImplementation : class, TInterface
+        {
+            Register(typeof(TInterface), typeof(TImplementation), LifeCycle.Instance, key);
         }
 
         public void Register<TInterface, TImplementation>()
             where TInterface : class
             where TImplementation : class, TInterface
-
         {
-            Register(typeof(TInterface),typeof(TImplementation),LifeCycle.Instance);
+            Register(typeof(TInterface), typeof(TImplementation), LifeCycle.Instance, Key.None);
         }
 
         public void Register(Type @interface, Type type)
         {
-            Register(@interface,type,LifeCycle.Instance);
+            Register(@interface, type, LifeCycle.Instance, Key.None);
         }
 
-        public void Register(Type @interface, Type type, LifeCycle lifeCycle)
+        public void Register(Type @interface, Type type, LifeCycle lifeCycle, Key key)
         {
             if (Dependencies.ContainsKey(@interface))
             {
                 if (@interface != type)
-                    Dependencies[@interface].Add(new Dependency(type, lifeCycle));
+                    Dependencies[@interface].Add(new Dependency(type, lifeCycle, key));
             }
             else
-                Dependencies.Add(@interface, new List<Dependency> {new Dependency(type, lifeCycle)});
+                Dependencies.Add(@interface, new List<Dependency> {new Dependency(type, lifeCycle, key)});
         }
     }
 }
